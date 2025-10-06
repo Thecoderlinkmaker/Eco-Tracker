@@ -1,7 +1,25 @@
+'use client';
+
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
+  const handleScrollToFeatures = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const features = document.getElementById('features');
+    if (features) {
+      features.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleSignIn = () => {
+    alert('Sign In feature coming soon! 🔐');
+  };
+
+  const handleGetStarted = () => {
+    alert('Welcome to EcoTrackr! Sign up feature coming soon. 🌱');
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
@@ -12,7 +30,7 @@ export default function Navbar() {
         
         <ul className={styles.navLinks}>
           <li>
-            <Link href="#features">Features</Link>
+            <a href="#features" onClick={handleScrollToFeatures}>Features</a>
           </li>
           <li>
             <Link href="#about">About</Link>
@@ -23,8 +41,8 @@ export default function Navbar() {
         </ul>
 
         <div className={styles.navActions}>
-          <button className={styles.btnSecondary}>Sign In</button>
-          <button className={styles.btnPrimary}>Get Started</button>
+          <button onClick={handleSignIn} className={styles.btnSecondary}>Sign In</button>
+          <button onClick={handleGetStarted} className={styles.btnPrimary}>Get Started</button>
         </div>
       </div>
     </nav>

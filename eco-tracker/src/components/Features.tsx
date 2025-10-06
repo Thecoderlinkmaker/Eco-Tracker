@@ -26,7 +26,7 @@ const features: Feature[] = [
 
 export default function Features() {
   return (
-    <section className={styles.features}>
+    <section id="features" className={styles.features}>
       {features.map((feature, index) => (
         <div key={index} className={styles.feature}>
           <span className={styles.icon}>{feature.icon}</span>
