@@ -3,6 +3,9 @@
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
 
+  --eco-green: #10b981;
+  --eco-green-hover: #059669;
+  --eco-dark: #047857;
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
@@ -30,8 +33,66 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 48px;
   grid-row-start: 2;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--eco-green) 0%, var(--eco-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--gray-rgb);
+  margin: 0;
+  opacity: 0.8;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 16px;
+}
+
+.feature {
+  background: var(--gray-alpha-100);
+  border: 1px solid var(--gray-alpha-200);
+  border-radius: 16px;
+  padding: 32px 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.feature h3 {
+  margin: 16px 0 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+.icon {
+  font-size: 3rem;
+  display: block;
 }
 
 .main ol {
@@ -59,97 +120,116 @@
 .ctas {
   display: flex;
   gap: 16px;
+  justify-content: center;
+  margin-top: 16px;
 }
 
-.ctas a {
+.ctas button {
   appearance: none;
   border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: 1px solid transparent;
+  height: 56px;
+  padding: 0 32px;
+  border: 2px solid transparent;
   transition:
     background 0.2s,
     color 0.2s,
-    border-color 0.2s;
+    border-color 0.2s,
+    transform 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 20px;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: inherit;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
+button.primary {
+  background: var(--eco-green);
+  color: white;
   gap: 8px;
 }
 
-a.secondary {
+button.secondary {
+  background: transparent;
   border-color: var(--gray-alpha-200);
-  min-width: 158px;
+  color: var(--foreground);
+  min-width: 180px;
 }
 
 .footer {
   grid-row-start: 3;
   display: flex;
   gap: 24px;
+  opacity: 0.7;
 }
 
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer img {
-  flex-shrink: 0;
+.footer p {
+  margin: 0;
+  font-size: 14px;
 }
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+  button.primary:hover {
+    background: var(--eco-green-hover);
+    transform: scale(1.05);
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  button.secondary:hover {
+    background: var(--gray-alpha-100);
+    border-color: var(--eco-green);
+    color: var(--eco-green);
+  }
+}
+
+@media (max-width: 900px) {
+  .features {
+    grid-template-columns: 1fr;
   }
 
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 600px) {
   .page {
-    padding: 32px;
+    padding: 32px 20px;
     padding-bottom: 80px;
   }
 
   .main {
     align-items: center;
+    gap: 32px;
   }
 
-  .main ol {
-    text-align: center;
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
   }
 
   .ctas {
     flex-direction: column;
+    width: 100%;
   }
 
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
+  .ctas button {
+    font-size: 16px;
+    height: 48px;
+    padding: 0 24px;
+    width: 100%;
   }
 
-  a.secondary {
+  button.secondary {
     min-width: auto;
   }
 
@@ -157,11 +237,5 @@ a.secondary {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
   }
 }
