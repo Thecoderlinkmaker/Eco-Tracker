@@ -1,17 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
-  const router = useRouter();
-
-  const handleScrollToFeatures = (e: React.MouseEvent) => {
+  const handleScrollTo = (e: React.MouseEvent, targetId: string) => {
     e.preventDefault();
-    const features = document.getElementById('features');
-    if (features) {
-      features.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -25,13 +22,13 @@ export default function Navbar() {
         
         <ul className={styles.navLinks}>
           <li>
-            <a href="#features" onClick={handleScrollToFeatures}>Features</a>
+            <a href="#features" onClick={(e) => handleScrollTo(e, 'features')}>Features</a>
           </li>
           <li>
             <Link href="#about">About</Link>
           </li>
           <li>
-            <Link href="#challenges">Challenges</Link>
+            <a href="#challenges" onClick={(e) => handleScrollTo(e, 'challenges')}>Challenges</a>
           </li>
         </ul>
 

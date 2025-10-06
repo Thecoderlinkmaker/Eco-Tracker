@@ -1,0 +1,226 @@
+.challenges {
+  width: 100%;
+  max-width: 1200px;
+  margin: 64px 0;
+  padding: 0 32px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: var(--foreground);
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--foreground);
+  opacity: 0.7;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.card {
+  background: var(--background);
+  border: 2px solid var(--gray-alpha-200);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.15);
+  border-color: var(--eco-green);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.icon {
+  font-size: 2.5rem;
+}
+
+.difficulty {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.easy {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.medium {
+  background: rgba(251, 191, 36, 0.1);
+  color: #d97706;
+}
+
+.hard {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: var(--foreground);
+}
+
+.description {
+  font-size: 0.95rem;
+  color: var(--foreground);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin: 0 0 20px;
+  flex-grow: 1;
+}
+
+.meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--gray-alpha-200);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: var(--foreground);
+  opacity: 0.7;
+}
+
+.metaIcon {
+  font-size: 1rem;
+}
+
+.impact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--eco-bg) 0%, rgba(16, 185, 129, 0.05) 100%);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.impactIcon {
+  font-size: 1.25rem;
+}
+
+.impactText {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--eco-green);
+}
+
+.joinBtn {
+  width: 100%;
+  padding: 12px 24px;
+  background: var(--eco-green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.joinBtn:hover {
+  background: var(--eco-green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.joinBtn:active {
+  transform: translateY(0);
+}
+
+.cta {
+  text-align: center;
+}
+
+.viewAllBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--eco-green);
+  border: 2px solid var(--eco-green);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.viewAllBtn:hover {
+  background: var(--eco-green);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card:hover {
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25);
+  }
+
+  .impact {
+    background: linear-gradient(135deg, var(--eco-bg) 0%, rgba(16, 185, 129, 0.1) 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .challenges {
+    padding: 0 20px;
+    margin: 48px 0;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

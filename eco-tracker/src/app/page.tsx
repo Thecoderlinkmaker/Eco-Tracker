@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Stats from "@/components/Stats";
+import Challenges from "@/components/Challenges";
 import CTA from "@/components/CTA";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <Features />
         <Stats />
+        <Challenges />
         <CTA />
       </main>
       <footer className={styles.footer}>
