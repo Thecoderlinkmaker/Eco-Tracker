@@ -1,12 +1,19 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --eco-green: #10b981;
+  --eco-green-hover: #059669;
+  --eco-dark: #047857;
+  --eco-light: #d1fae5;
+  --eco-bg: #f0fdf4;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --eco-bg: #064e3b;
+    --eco-light: #065f46;
   }
 }
 
