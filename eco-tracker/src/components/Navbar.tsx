@@ -1,23 +1,18 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
+  const router = useRouter();
+
   const handleScrollToFeatures = (e: React.MouseEvent) => {
     e.preventDefault();
     const features = document.getElementById('features');
     if (features) {
       features.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const handleSignIn = () => {
-    alert('Sign In feature coming soon! 🔐');
-  };
-
-  const handleGetStarted = () => {
-    alert('Welcome to EcoTrackr! Sign up feature coming soon. 🌱');
   };
 
   return (
@@ -41,8 +36,8 @@ export default function Navbar() {
         </ul>
 
         <div className={styles.navActions}>
-          <button onClick={handleSignIn} className={styles.btnSecondary}>Sign In</button>
-          <button onClick={handleGetStarted} className={styles.btnPrimary}>Get Started</button>
+          <Link href="/signin" className={styles.btnSecondary}>Sign In</Link>
+          <Link href="/signup" className={styles.btnPrimary}>Get Started</Link>
         </div>
       </div>
     </nav>

@@ -1,14 +1,7 @@
-'use client';
-
+import Link from 'next/link';
 import styles from './CTA.module.css';
 
 export default function CTA() {
-  const handleGetStarted = () => {
-    // For now, scroll to top or show a message
-    // In the future, this would navigate to a sign-up page
-    alert('Welcome to EcoTrackr! Sign up feature coming soon. 🌱');
-  };
-
   return (
     <section className={styles.cta}>
       <div className={styles.container}>
@@ -17,10 +10,10 @@ export default function CTA() {
           Join thousands of eco-conscious individuals tracking their green habits
           and building a sustainable future together.
         </p>
-        <button onClick={handleGetStarted} className={styles.button}>
+        <Link href="/signup" className={styles.button}>
           Start Your Journey Today
           <span className={styles.arrow}>→</span>
-        </button>
+        </Link>
         <p className={styles.note}>Free forever • No credit card required</p>
       </div>
     </section>

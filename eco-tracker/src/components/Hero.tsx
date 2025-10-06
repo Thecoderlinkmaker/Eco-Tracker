@@ -1,12 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import styles from './Hero.module.css';
 
 export default function Hero() {
-  const handleGetStarted = () => {
-    alert('Welcome to EcoTrackr! Start tracking your eco-friendly actions today. 🌱');
-  };
-
   const handleLearnMore = () => {
     const featuresSection = document.getElementById('features');
     if (featuresSection) {
@@ -21,9 +18,9 @@ export default function Hero() {
         Track your daily eco-friendly actions and make a difference
       </p>
       <div className={styles.ctas}>
-        <button onClick={handleGetStarted} className={styles.primary}>
+        <Link href="/signup" className={styles.primary}>
           Get Started
-        </button>
+        </Link>
         <button onClick={handleLearnMore} className={styles.secondary}>
           Learn More
         </button>
