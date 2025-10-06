@@ -85,6 +85,7 @@
   gap: 12px;
 }
 
+.navActions a,
 .navActions button {
   appearance: none;
   border: none;
@@ -95,6 +96,10 @@
   cursor: pointer;
   transition: all 0.2s;
   font-family: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btnPrimary {

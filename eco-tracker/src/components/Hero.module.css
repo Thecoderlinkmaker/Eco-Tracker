@@ -33,6 +33,7 @@
   margin-top: 16px;
 }
 
+.ctas a,
 .ctas button {
   appearance: none;
   border-radius: 128px;
@@ -52,13 +53,16 @@
   line-height: 20px;
   font-weight: 600;
   font-family: inherit;
+  text-decoration: none;
 }
 
+a.primary,
 button.primary {
   background: var(--eco-green);
   color: white;
 }
 
+a.secondary,
 button.secondary {
   background: transparent;
   border-color: var(--gray-alpha-200);
@@ -67,11 +71,13 @@ button.secondary {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  a.primary:hover,
   button.primary:hover {
     background: var(--eco-green-hover);
     transform: scale(1.05);
   }
 
+  a.secondary:hover,
   button.secondary:hover {
     background: var(--gray-alpha-100);
     border-color: var(--eco-green);
